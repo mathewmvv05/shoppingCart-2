@@ -104,38 +104,38 @@ if (!$shoppingCart->isEmpty()) {
 <body>
     <nav>
         <div class="nav-wrapper">
-            <span class="brand-logo">React Tutorial</span>
+            <span class="brand-logo">Shopping Cart</span>
         </div>
     </nav>
-    <div class="row">
-        <div class="col s12 m6">
-            <div class="card">
-                <div class="card-content">
-                    <?php
-                    foreach ($products as $product) {
-                        echo '<br>';
-                        echo '
-                            <h3>' . $product['name'] . '</h3>
-    
-                            <div>
+    <?php
+        foreach ($products as $product) {
+            echo '
+                <div class="row">
+                    <div class="col s12 m2">
+                        <div class="card">
+                            <div class="card-content">
+                                
+                                <span class="card-title">' . $product['name'] . '</span>
+            
                                 <div>
-                                    <h4>$' . $product['price'] . '</h4>
-                                    <form>
-                                        <input type="hidden" value="' . $product['name'] . '" class="product-name" />';
+                                    <div>
+                                        <hp>$' . $product['price'] . '</hp>
+                                        <form>
+                                            <input type="hidden" value="' . $product['name'] . '" class="product-name" />';
 
-                        echo '
-                                        <div>
-                                            <button class="waves-effect waves-light btn" onclick=addItem("'. $product['name'] .'")>Add</button>
-                                        </div>
-                                    </form>
+                            echo '
+                                            <div>
+                                                <button class="waves-effect waves-light btn" onclick=addItem("'. $product['name'] .'")>Add</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <hr>
-                            </div>';
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
+                                
+                            </div>
+                        </div>
+                    </div>';
+            }
+    ?>
         <div class="row">
             <div class="col s12 m6">
                 <div class="card">
